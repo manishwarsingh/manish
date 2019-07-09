@@ -1,0 +1,674 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 import sqlite3\par
+from tkinter import *\par
+\par
+conn = sqlite3.connect("Sandhya.db")\par
+c = conn.cursor()\par
+c.execute("create table if not exists name(Fname text,Lname text,Email text,phone Number,uname text,pass text,sec text)")\par
+conn.commit()\par
+e = conn.cursor()\par
+e.execute("create table if not exists new(rollno int,hello text)")\par
+conn.commit()\par
+\par
+global PASSWORD11\par
+\par
+def sixth():\par
+   new.destroy()\par
+   global new8\par
+   new8=Tk()\par
+   new8.geometry("800x1600")\par
+   new8.title("DRIVING LICENCE INFORMATION...")\par
+\par
+\par
+   label_0 = Label(new8, text="DRIVING LICENCE \\n INFORMATION...", width=30, font=("bold", 35), fg='sky blue')\par
+   label_0.place(x=90, y=63)\par
+\par
+   label_0 = Label(new8, text="FIRST NAME:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=180)\par
+   entry_0 = Entry(new8)\par
+   entry_0.place(x=330, y=180)\par
+\par
+   label_1 = Label(new8, text="LAST NAME:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new8)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new8, text="Email id.:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new8)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new8, text="Mobile NO:-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new8)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new8, text="licence No.:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new8)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new8, text="Address:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new8)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new8, text="Date of licence:-", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new8)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new8, text="liecnce grade:-", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   #entry_7 = Entry(new8)\par
+   #entry_7.place(x=330, y=480)\par
+\par
+   list1 = ("lite","Learner licence","0pen licence")\par
+   c = StringVar()\par
+   droplist = OptionMenu(new8, c, *list1)\par
+   c.set('licence')\par
+   droplist.place(x=330, y=530)\par
+\par
+   label_8 = Label(new8, text="Owner Name.:-", width=20, font=("bold", 15))\par
+   label_8.place(x=150, y=630)\par
+   entry_8 = Entry(new8)\par
+   entry_8.place(x=330, y=630)\par
+\par
+   button = Button(new8, text="save", width=20, bg="blue", font=("bold", 20), fg="black", command="save").place(x=240,y=680)\par
+   button=Button(new8,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=second).place(x=240, y=730)\par
+   button.pack()\par
+\par
+\par
+def fifth():\par
+   new.destroy()\par
+   global new7\par
+   new7=Tk()\par
+   new7.geometry("800x1600")\par
+   new7.title("PAN CARD INFORMATION...")\par
+\par
+   label_0 = Label(new7, text="PAN CARD \\n INFORMATION...", width=30, font=("bold", 35), fg='yellow')\par
+   label_0.place(x=90, y=63)\par
+\par
+   label_0 = Label(new7, text="FIRST NAME:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=185)\par
+   entry_0 = Entry(new7)\par
+   entry_0.place(x=330, y=185)\par
+\par
+   label_1 = Label(new7, text="FATHER'S NAME:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new7)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new7, text="Email id.:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new7)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new7, text="Pan Card NO:-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new7)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new7, text="Date of birth:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new7)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new7, text="Address:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new7)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new7, text="........", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new7)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new7, text="........:", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   entry_7 = Entry(new7)\par
+   entry_7.place(x=330, y=530)\par
+\par
+   label_8 = Label(new7, text=".........:", width=20, font=("bold", 15))\par
+   label_8.place(x=150, y=580)\par
+   entry_8 = Entry(new7)\par
+   entry_8.place(x=330, y=580)\par
+\par
+   button = Button(new7, text="save", width=20, bg="blue", font=("bold", 20), fg="black", command="save").place(x=240,y=640)\par
+   button=Button(new7,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=second).place(x=240, y=700)\par
+   button.pack()\par
+\par
+\par
+def forth():\par
+   new.destroy()\par
+   global new6\par
+   new6=Tk()\par
+   new6.geometry("800x1600")\par
+   new6.title("Aadhar Card INFORMATION...")\par
+\par
+   label_0 = Label(new6, text="Aadhar Card \\ninformacton...", width=30, font=("bold", 35),fg="brown")\par
+   label_0.place(x=90, y=63)\par
+\par
+   label_0 = Label(new6, text="Fist Name:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=180)\par
+   entry_0 = Entry(new6)\par
+   entry_0.place(x=330, y=180)\par
+\par
+\par
+   label_1 = Label(new6, text="Last Name:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new6)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new6, text="Father's Name:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new6)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new6, text="Date of birth:-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new6)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new6, text="Aadhar card No.:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new6)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new6, text="Email id.:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new6)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new6, text="Mobile NO:-", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new6)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new6, text="Address:-", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   entry_7 = Entry(new6)\par
+   entry_7.place(x=330, y=530)\par
+\par
+   label_8 = Label(new6, text=".........:", width=20, font=("bold", 15))\par
+   label_8.place(x=150, y=580)\par
+   entry_8 = Entry(new6)\par
+   entry_8.place(x=330, y=580)\par
+\par
+   button = Button(new6, text="save", width=20, bg="blue", font=("bold", 20), fg="black", command="save").place(x=240, y=640)\par
+   button=Button(new6,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=second).place(x=240, y=700)                                                                                                            \par
+   button.pack()\par
+\par
+def eight():\par
+   new.destroy()\par
+   global new10\par
+   new10 = Tk()\par
+   new10.geometry("800x1600")\par
+   new10.title("Student I'D")\par
+\par
+   label = Label(new10, text="Student I'D..", width=20, font=("bold", 40), fg='red')\par
+   label.place(x=90, y=63)\par
+\par
+   label_0= Label(new10, text="STU NAME:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=180)\par
+   entry_0 = Entry(new10)\par
+   entry_0.place(x=330, y=180)\par
+\par
+   label_1 = Label(new10, text="FATHER NAME:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new10)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new10, text="Email id.:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new10)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new10, text="Address :-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new10)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new10, text="Roll No.:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new10)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new10, text="College Name:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new10)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new10, text="D.O.Birth-", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new10)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new10, text="Phone no:-", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   entry_7 = Entry(new10)\par
+   entry_7.place(x=330, y=530)\par
+\par
+   button=Button(new10,text="save", width=20, bg="blue",font=("bold", 20), fg="black",command="save").place(x=240, y=580)\par
+\par
+   button=Button(new10,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=second).place(x=240, y=630)\par
+   button.pack()\par
+\par
+   \par
+\par
+def nine():\par
+   new.destroy()\par
+   global new11\par
+   new11 = Tk()\par
+   new11.geometry("800x1600")\par
+   new11.title("Employee  I'D")\par
+\par
+   label = Label(new11, text="EMPLOYEE I'D..", width=20, font=("bold", 40), fg='green')\par
+   label.place(x=90, y=63)\par
+\par
+   label_0= Label(new11, text="Emp NAME:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=180)\par
+   entry_0 = Entry(new11)\par
+   entry_0.place(x=330, y=180)\par
+ \par
+   label_1 = Label(new11, text="Father NAME:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new11)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new11, text="Email id.:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new11)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new11, text=" Emp. Id No.:-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new11)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new11, text="Company Name:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new11)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new11, text="Dept. Name:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new11)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new11, text="D.O.Birth:-", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new11)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new11, text="Emp. Address:-", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   entry_7 = Entry(new11)\par
+   entry_7.place(x=330, y=530)\par
+\par
+   button=Button(new11,text="save", width=20, bg="blue",font=("bold", 20), fg="black",command="save").place(x=240, y=580)\par
+   button=Button(new11,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=second).place(x=240, y=630)\par
+   button.pack()\par
+\par
+def ten():\par
+  # new.destroy()\par
+   global new13\par
+   new13 = Tk()\par
+   new13.geometry("800x1600")\par
+   new13.title("certificates")\par
+\par
+   label= Label(new13, text="Certificates\\nInformation...", width=20, font=("bold", 35), fg='black')\par
+   label.place(x=90, y=63)\par
+\par
+   button=Button(new13,text="01. M/S CERTIFICATE", width=20, bg="white",font=("bold", 20), fg="skyblue",command=eleven).place(x=120, y=200)\par
+   button=Button(new13,text="02. H/S CERTIFICATE", width=20, bg="white",font=("bold", 20), fg="black").place(x=120, y=300)\par
+   button=Button(new13,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=twelve).place(x=200, y=380)\par
+   button.pack()\par
+\par
+def eleven():\par
+   new14.destroy()\par
+   global new12\par
+   new12 = Tk()\par
+   new12.geometry("800x1600")\par
+   new12.title("certificates")\par
+\par
+   label= Label(new12, text="Middle school \\n Certificates", width=20, font=("bold", 35), fg="red")\par
+   label.place(x=90, y=63)\par
+\par
+   label_0= Label(new12, text="FIRST NAME:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=180)\par
+   entry_0 = Entry(new12)\par
+   entry_0.place(x=330, y=180)\par
+\par
+   label_1 = Label(new12, text="LAST NAME:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new12)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new12, text="Fathrs's name:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new12)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new12, text="Address :-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new12)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new12, text="Roll No.:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new12)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new12, text="school Name:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new12)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new12, text="universty name:-", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new12)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new12, text="Marks:-", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   entry_7 = Entry(new12)\par
+   entry_7.place(x=330, y=530)\par
+\par
+   label_8 = Label(new12, text="Grade:-", width=20, font=("bold", 15))\par
+   label_8.place(x=150, y=580)\par
+   entry_8 = Entry(new12)\par
+   entry_8.place(x=330, y=580)\par
+\par
+   label_9 = Label(new12, text="Mobile No :-", width=20, font=("bold", 15))\par
+   label_9.place(x=150, y=630)\par
+   entry_9 = Entry(new12)\par
+   entry_9.place(x=330, y=630)\par
+\par
+   button=Button(new12,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=twelve).place(x=200, y=690).pack()\par
+\par
+def twelve():\par
+  # new.destroy()\par
+   global new14\par
+   new14 = Tk()\par
+   new14.geometry("800x1600")\par
+   new14.title("certificates")\par
+\par
+   label= Label(new14, text="Information..Locker.", width=20, font=("bold", 35), fg='black')\par
+   label.place(x=90, y=63)\par
+\par
+   button=Button(new14,text="01. DOCUMENTS", width=20, bg="white",font=("bold", 20), fg="skyblue",command=second).place(x=120, y=200)\par
+   button=Button(new14,text="02. CERTIFICATE", width=20, bg="white",font=("bold", 20), fg="black",command=ten).place(x=120, y=300)\par
+   #button.pack()   \par
+\par
+\par
+\par
+def third():\par
+   new.destroy()\par
+   global new5\par
+   new5=Tk()\par
+   new5.geometry("800x1600")\par
+   new5.title("Banking Info...")\par
+   \par
+\par
+\par
+   label= Label(new5, text="Banking \\nInformation...", width=20, font=("bold", 35), fg='black')\par
+   label.place(x=90, y=63)\par
+\par
+   label_0= Label(new5, text="FIRST NAME:-", width=20, font=("bold", 15))\par
+   label_0.place(x=150, y=180)\par
+   entry_0 = Entry(new5)\par
+   entry_0.place(x=330, y=180)\par
+\par
+   label_1 = Label(new5, text="LAST NAME:-", width=20, font=("bold", 15))\par
+   label_1.place(x=150, y=230)\par
+   entry_1 = Entry(new5)\par
+   entry_1.place(x=330, y=230)\par
+\par
+   label_2 = Label(new5, text="Email id.:-", width=20, font=("bold", 15))\par
+   label_2.place(x=150, y=280)\par
+   entry_2 = Entry(new5)\par
+   entry_2.place(x=330, y=280)\par
+\par
+   label_3 = Label(new5, text="Address :-", width=20, font=("bold", 15))\par
+   label_3.place(x=150, y=330)\par
+   entry_3 = Entry(new5)\par
+   entry_3.place(x=330, y=330)\par
+\par
+   label_4 = Label(new5, text="Account No.:-", width=20, font=("bold", 15))\par
+   label_4.place(x=150, y=380)\par
+   entry_4 = Entry(new5)\par
+   entry_4.place(x=330, y=380)\par
+\par
+   label_5 = Label(new5, text="Bank Name:-", width=20, font=("bold", 15))\par
+   label_5.place(x=150, y=430)\par
+   entry_5 = Entry(new5)\par
+   entry_5.place(x=330, y=430)\par
+\par
+   label_6 = Label(new5, text="Bank Branch:-", width=20, font=("bold", 15))\par
+   label_6.place(x=150, y=480)\par
+   entry_6 = Entry(new5)\par
+   entry_6.place(x=330, y=480)\par
+\par
+   label_7 = Label(new5, text="Bank Address:-", width=20, font=("bold", 15))\par
+   label_7.place(x=150, y=530)\par
+   entry_7 = Entry(new5)\par
+   entry_7.place(x=330, y=530)\par
+\par
+   label_8 = Label(new5, text="ATM NO.:-", width=20, font=("bold", 15))\par
+   label_8.place(x=150, y=580)\par
+   entry_8 = Entry(new5)\par
+   entry_8.place(x=330, y=580)\par
+\par
+   label_9 = Label(new5, text="Mobile No :-", width=20, font=("bold", 15))\par
+   label_9.place(x=150, y=630)\par
+   entry_9 = Entry(new5)\par
+   entry_9.place(x=330, y=630)\par
+\par
+   button=Button(new5,text="save", width=20, bg="blue",font=("bold", 20), fg="black",command="save").place(x=240, y=680)\par
+\par
+   button=Button(new5,text="Back", width=20, bg="blue",font=("bold", 20), fg="black",command=second).place(x=240, y=730)\par
+   button.pack()\par
+\par
+def second():\par
+   new14.destroy()\par
+   global new\par
+   new = Tk()\par
+\par
+   new.geometry("800x1600")\par
+   new.title("Sign Up")\par
+   label_0 = Label(new, text="Documents \\ninformation...", width=20, font=("bold", 50), fg='red')\par
+   label_0.place(x=200, y=50)\par
+\par
+   #label_0 = Label(new, text="Menu...", width=20, font=("bold", 40), fg='red')\par
+   #label_0.place(x=90, y=63)\par
+\par
+   button =Button (new,text="Banking Info",width=40, bg="white", font=("bold", 25), fg="black",command=third).place(x=150, y=250)\par
+   button = Button(new, text="Aadhar Card Info", width=40, bg="white", font=("bold", 25), fg="brown",command=forth).place(x=150, y=300)\par
+   button = Button(new, text="Pan Card Info", bg="white", width=40,font=("bold", 25), fg="yellow",command=fifth).place(x=150, y=350)\par
+   button = Button(new, text="Driving Licence Info", bg="white", width=40, font=("bold", 25), fg="sky blue",command=sixth).place(x=150, y=400)\par
+   button = Button(new, text="Student I'D", bg="white", width=40, font=("bold", 25), fg="red",command=eight).place(x=150, y=450)\par
+   button = Button(new, text="Employee I'D", bg="white", width=40, font=("bold", 25), fg="green",command=nine).place(x=150, y=500)\par
+\par
+   #Button(new, text="Other options....", width=45, font=("bold", 15), fg="black",command=ten).place(x=150, y=600)\par
+   Button(new, text="Enter", width=22, bg="blue", fg="white").place(x=350, y=700)\par
+   Button(new, text="Cancel", width=22, bg="blue", fg="white",command=twelve).place(x=150, y=700)\par
+   button.pack()\par
+\par
+\par
+'''def create_page():\par
+   # new3.destroy()\par
+   global new1\par
+   new1 = Tk()\par
+   new1.geometry("800x1600")\par
+   new1.title("Forget Possword...")\par
+   label_0 = Label(new1, text="Security Question", width=20, font=("bold", 40), fg='red')\par
+   label_0.place(x=90, y=63)\par
+   #Button(new1, text='NAME')\par
+   #l1 = Label(new1)\par
+   label_1 = Label(new1, text="Question:", width=20, font=("bold", 20))\par
+   label_1.place(x=150, y=230)\par
+\par
+   entry_1 = Entry(new1)\par
+   entry_1.place(x=390, y=230, width=300)\par
+\par
+   label_2 = Label(new1, text="Answer:", width=20, font=("bold", 20))\par
+   label_2.place(x=150, y=280)\par
+\par
+   entry_2 = Entry(new1)\par
+   entry_2 .place(x=390,y=280)\par
+\par
+   Button(new1, text="RESET", width=20, bg="blue", fg="white",command=seventh).place(x=340, y=360).pack()'''\par
+\par
+def seventh():\par
+   new4.destroy()\par
+   global new9\par
+   new9 = Tk()\par
+   new9.geometry("800x1600")\par
+   new9.title("Sign Up")\par
+   label_0 = Label(new9, text="Forget Password", width=20, font=("bold", 40), fg='red')\par
+   label_0.place(x=90, y=63)\par
+   #Button(new9, text='NAME')\par
+   #l1 = Label(new9)\par
+   label_1 = Label(new9, text="User Name:-", width=15, font=("bold", 15))\par
+   label_1.place(x=200, y=230)\par
+\par
+   entry_1 = Entry(new9)\par
+   entry_1.place(x=400, y=230,)\par
+\par
+   label_2 = Label(new9, text="New Password:-", width=15, font=("bold", 15))\par
+   label_2.place(x=200, y=290)\par
+\par
+   entry_2 = Entry(new9)\par
+   entry_2.place(x=400,y=290)\par
+\par
+   label_3 = Label(new9, text="conform password:-", width=20, font=("bold", 15))\par
+   label_3.place(x=185, y=340)\par
+   entry_3 = Entry(new9)\par
+   entry_3.place(x=400, y=340 ,)\par
+\par
+   Button(new9, text="RESET", width=20, bg="blue", fg="black", command=twelve).place(x=270, y=390)\par
+   Button(new9, text="back", width=20,bg="blue", fb="black", command=new4).place(x=370, y=460)\par
+\par
+def create_window():\par
+\par
+    # database()\par
+    def check():\par
+        if entry_1.get() == "" or entry_2.get() == "" or entry_3.get() == "" or entry_4.get() == "" or entry_5.get() == "" or entry_6.get() == "" or entry_7.get()=="":\par
+            print("enter all data")\par
+        else:\par
+            c.execute("insert into name values(?,?,?,?,?,?)",\par
+                      (entry_1.get(), entry_2.get(), entry_3.get(), entry_4.get(), entry_5.get(), entry_6.get(),entry_7.get()))\par
+            conn.commit()\par
+  \par
+    global new2\par
+    #new3.destroy()\par
+    PASSWORD = StringVar()\par
+\par
+    new2 = Tk()\par
+    new2.geometry("800x1600")\par
+    new2.title("Sign Up")\par
+    \par
+    label_0 = Label(new2, text="Sign up", width=20, font=("bold", 40), fg='red')\par
+    label_0.place(x=90, y=43)\par
+\par
+    #Button(new2, text='NAME')\par
+    #l1 = Label(new2)\par
+    label_1 = Label(new2, text="FIRST NAME:", width=20, font=("bold", 10))\par
+    label_1.place(x=150, y=130)\par
+\par
+    entry_1 = Entry(new2)\par
+    entry_1.place(x=330, y=130)\par
+\par
+    label_2 = Label(new2, text="LAST NAME:", width=20, font=("bold", 10))\par
+    label_2.place(x=150, y=180)\par
+\par
+    entry_2 = Entry(new2)\par
+    entry_2.place(x=330, y=180)\par
+\par
+    label_2 = Label(new2, text="EMAIL ID.:", width=20, font=("bold", 10))\par
+    label_2.place(x=150, y=230)\par
+\par
+    entry_2 = Entry(new2)\par
+    entry_2.place(x=330, y=230)\par
+\par
+    label_3 = Label(new2, text="PHONE NO:", width=20, font=("bold", 10))\par
+    label_3.place(x=150, y=280)\par
+    entry_3 = Entry(new2)\par
+    entry_3.place(x=330, y=280)\par
+\par
+    label_4 = Label(new2, text="CREATE UNAME:", width=20, font=("bold", 10))\par
+    label_4.place(x=150, y=330)\par
+    entry_4 = Entry(new2)\par
+    entry_4.place(x=330, y=330)\par
+\par
+    label_5 = Label(new2, text="CREATE PASSWORD:", width=20, font=("bold", 10))\par
+    label_5.place(x=150, y=380)\par
+    entry_5 = Entry(new2)\par
+    entry_5.place(x=330, y=380)\par
+\par
+\par
+    label_6 = Label(new2, text="security reason", width=20, font=("bold", 10))\par
+    label_6.place(x=150, y=430)\par
+    entry_6 = Entry(new2)\par
+    entry_6.place(x=330, y=430)\par
+\par
+\par
+    var = IntVar()\par
+\par
+    label_7 = Label(new2, text="Gender:", width=20, font=("bold", 11))\par
+    label_7.place(x=150, y=480)\par
+    Radiobutton(new2, text="Male", padx=5, variable=var, value=1).place(x=270, y=480)\par
+    Radiobutton(new2, text="Female", padx=20, variable=var, value=2).place(x=325, y=480)\par
+    button = Button(new2, text="Create Account", fg="white", bg='black', font=("bold", 19), width=15, command=check).place(\par
+       x=280, y=630)\par
+    button.pack()\par
+\par
+def check_data():\par
+        c.execute("select * from name where uname=? ", (entry_4.get(),))\par
+        d = c.fetchone()\par
+        print(d)\par
+        if d[4] == entry_5.get() and d[3] == entry_4.get():\par
+            second()\par
+        else:\par
+            print("Wrong Password")\par
+\par
+global new4\par
+new4 = Tk()\par
+new4.geometry("800x1600")\par
+new4.title("login page")\par
+\par
+#myImage = image.open("IMG_20180402_124926474")\par
+#myImage.show\par
+\par
+label_1 = Label(new4, text="WELLCOME\\nINFORMATION MANEGMENT SYSTEM", bg="pink", width=40, font=("bold", 35), fg="red")\par
+label_1.place(x=100, y=140)\par
+\par
+label_2 = Label(new4, text="The indian citizens to store certain official documents on the cloud.\\n The service is aimed towards reducing the need to carry physical documents,and the part of govt's digital india.\\n The uses to store identifiction card issued by private,govt. and any other company or]\\n egencies like Education certificate, PAN Card Aadhar card,Driving license documents etc. and some other documents. \\n When the govt.had urged all muncipial bodies to use DIGITAL LOCKER to make their administration paperless.", font=("bold", 15), fg="black")\par
+label_2.place(x=80, y=250)\par
+\par
+\par
+label_3 = Label(new4, text="Login details...", width=25, bg="sky blue", font=("bold", 20), fg='red')\par
+label_3. place(x=980, y=400)\par
+\par
+label_4 = Label(new4, text="Username:", width=20, font=("bold", 15), fg='red')\par
+label_4.place(x=990, y=450)\par
+\par
+entry_4 = Entry(new4)\par
+entry_4.place(x=1190, y=450)\par
+\par
+label_5 = Label(new4, text="Password:", width=20, font=("bold", 15), fg='red')\par
+label_5.place(x=990, y=500)\par
+\par
+entry_5 = Entry(new4)\par
+entry_5.place(x=1190, y=500)\par
+\par
+button = Button(new4, text="Sign in", fg="red", font=("bold", 15), width=10, command=check_data).place(x=1060, y=550)\par
+button = Button(new4, text="Sign up", fg="red", width=10, font=('bold', 15), command=create_window).place(x=1202,y=550)\par
+button = Button(new4, text="Forget Password ?", fg="black", font=("bold", 15), width=15, command=seventh).place(x=1070, y=600)\par
+\par
+mainloop()\par
+\par
+\par
+}
+ 
