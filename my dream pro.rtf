@@ -2,7 +2,7 @@
 {\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\sa200\sl276\slmult1\lang9\f0\fs22 import sqlite3\par
 from tkinter import *\par
 \par
-conn = sqlite3.connect("Sandhya.db")\par
+conn = sqlite3.connect("manish.db")\par
 c = conn.cursor()\par
 c.execute("create table if not exists name(Fname text,Lname text,Email text,phone Number,uname text,pass text,sec text)")\par
 conn.commit()\par
@@ -671,4 +671,3 @@ mainloop()\par
 \par
 \par
 }
- 
